@@ -1,7 +1,7 @@
 
 import express from "express";
 const router = express.Router();
-import  login  from "../controllers/auth.js"; 
+import  Login  from "../controllers/auth.js"; 
 import register from "../controllers/userRegster.js"
 import { getFeedPosts, getUserPosts, likePost ,createPost } from "../controllers/posts.js";
 import {
@@ -13,7 +13,7 @@ import {
 import upload from "../multerconfig.js"
 router.post("/auth/register", upload.single("picture"), register);
 router.post("/posts", verifyToken, upload.single("picture"), createPost);
-router.get("/auth/login",  login);
+router.get("/auth/login",  Login);
 /* post */
 router.get("/posts", verifyToken, getFeedPosts);
 router.get("/posts/:userId/posts", verifyToken, getUserPosts);
