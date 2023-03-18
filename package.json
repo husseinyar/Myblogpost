@@ -27,7 +27,6 @@
     "multer-gridfs-storage": "^5.0.2",
     "nodemon": "^2.0.20"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/husseinyar/Myblogpost.git"
