@@ -1,14 +1,14 @@
 
 import express from "express";
 const router = express.Router();
-import  {login, register}  from "../controllers/auth.js"; 
+import  {login, register}  from "../Controllers/auth.js"; 
 
-import { getFeedPosts, getUserPosts, likePost ,createPost } from "../controllers/posts.js";
+import { getFeedPosts, getUserPosts, likePost ,createPost } from "../Controllers/posts.js";
 import {
     getUser,
     getUserFriends,
     addRemoveFriend,
-  } from "../controllers/users.js";
+  } from "../Controllers/users.js";
   import { verifyToken } from "../middleware/auth.js";
 import upload from "../multerconfig.js"
 router.post("/auth/register", upload.single("picture"), register);
