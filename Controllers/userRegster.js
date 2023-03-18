@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 
 import User from "../models/User.js";
- const register = async (req, res) => {
+export  const register = async (req, res) => {
     try {
       const {
         firstName,
@@ -36,4 +36,3 @@ import User from "../models/User.js";
     }
   };
   
-  export default register;

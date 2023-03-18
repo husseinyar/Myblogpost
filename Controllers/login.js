@@ -6,7 +6,7 @@ import User from "../models/User.js";
 
 
 /* LOGGING IN */
-const login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
@@ -22,5 +22,3 @@ const login = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-export default login;
