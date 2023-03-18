@@ -8,7 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-import {router} from "./Routes/router.js";
+import router from "./Routes/router.js";
 
 
 
