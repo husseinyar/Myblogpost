@@ -10,14 +10,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 import router from "./routes/router.js";
 
-import configViewEngine from './configs/viewEngine.js'
+
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
-configViewEngine(app);
+
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));

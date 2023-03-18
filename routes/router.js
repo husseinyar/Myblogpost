@@ -2,7 +2,7 @@
 import express from "express";
 const router = express.Router();
 import  {login, register}  from "../controllers/auth.js"; 
-import register from "../controllers/userRegster.js"
+
 import { getFeedPosts, getUserPosts, likePost ,createPost } from "../controllers/posts.js";
 import {
     getUser,
