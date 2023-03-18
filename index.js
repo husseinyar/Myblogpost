@@ -1,22 +1,21 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import cors from "cors";
-import dotenv from "dotenv";
+const express = require("express");
+const bodyParser = require("body-parser"); 
+const mongoose = require ("mongoose");
+const cors = require( "cors");
+const dotenv = require ("dotenv");
 
-import helmet from "helmet";
-import morgan from "morgan";
-import path from "path";
-import { fileURLToPath } from "url";
-import router from "./Routes/router.js";
+const helmet = require ("helmet");
+const morgan =require ("morgan");
+const path = require ("path");
+const { fileURLToPath } = require ("url");
+const  router = require("./Routes/router.js");
 
 
 
 
 
 /* CONFIGURATIONS */
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 dotenv.config();
 const app = express();
 

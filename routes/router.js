@@ -1,16 +1,17 @@
 
-import express from "express";
-const  router = express.Router();
-import  {login, register}  from "../Controllers/auth.js"; 
 
-import { getFeedPosts, getUserPosts, likePost ,createPost } from "../Controllers/posts.js";
-import {
+const express = require("express")
+const  router = express.Router();
+const  {login, register} = require( "../Controllers/auth.js"); 
+
+const { getFeedPosts, getUserPosts, likePost ,createPost }= require("../Controllers/posts.js") ;
+const {
     getUser,
     getUserFriends,
     addRemoveFriend,
-  } from "../Controllers/users.js";
-  import { verifyToken } from "../middleware/auth.js";
-import upload from "../multerconfig.js"
+  } =require("../Controllers/users.js");
+  const { verifyToken } = require("../middleware/auth.js") ;
+const upload =require("../multerconfig.js");
 router.post("/auth/register", upload.single("picture"), register);
 router.post("/posts", verifyToken, upload.single("picture"), createPost);
 router.post("/auth/login", login);
@@ -29,4 +30,5 @@ router.get("/users/:id/friends", verifyToken, getUserFriends);
 /* UPDATE */
 router.patch("/users/:id/:friendId", verifyToken, addRemoveFriend);
 
-export default router;
+
+module.exports = router;

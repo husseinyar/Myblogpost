@@ -1,5 +1,5 @@
-import multer from "multer";
 
+const  multer = require ("multer");
 
 // storage config
 const storage = multer.diskStorage({
@@ -11,5 +11,5 @@ const storage = multer.diskStorage({
     },
   });
   const upload = multer({ storage });
+  module.exports = upload;
 
-export default upload;
