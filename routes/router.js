@@ -1,6 +1,6 @@
 
 import express from "express";
-var router = express.Router();
+const  router = express.Router();
 import  {login, register}  from "../Controllers/auth.js"; 
 
 import { getFeedPosts, getUserPosts, likePost ,createPost } from "../Controllers/posts.js";
