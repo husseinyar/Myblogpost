@@ -7,8 +7,8 @@ const dotenv = require ("dotenv");
 const helmet = require ("helmet");
 const morgan =require ("morgan");
 const path = require ("path");
-const { fileURLToPath } = require ("url");
-const  router = require("./Routes/router.js");
+
+const  router = require("./Routes/router");
 
 
 
