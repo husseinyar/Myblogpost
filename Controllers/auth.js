@@ -52,7 +52,10 @@ exports.register = async (req, res) => {
     });
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
+    console.log(savedUser)
   } catch (err) {
+    console.log(err.message )
     res.status(500).json({ error: err.message });
+    
   }
 };
