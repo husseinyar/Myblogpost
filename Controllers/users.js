@@ -37,7 +37,11 @@ exports.addRemoveFriend = async (req, res) => {
     const { id, friendId } = req.params;
     const user = await User.findById(id);
     const friend = await User.findById(friendId);
-
+    if (id === friendId) {
+    
+      res.status(400).json({ message: err.message })
+      return;
+    }
     if (user.friends.includes(friendId)) {
       user.friends = user.friends.filter((id) => id !== friendId);
       friend.friends = friend.friends.filter((id) => id !== id);
