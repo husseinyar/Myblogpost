@@ -11,6 +11,10 @@ const path = require ("path");
 const  router = require("./Route/router");
 
 
+const http = require("http");
+
+
+
 
 
 
@@ -18,7 +22,7 @@ const  router = require("./Route/router");
 
 dotenv.config();
 const app = express();
-
+const Server = http.createServer(app)
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
