@@ -1,11 +1,11 @@
 
-const  Post = require ("../models/Post.js");
-
-const User = require ("../models/User.js");
+import Post from "../models/Post.js";
+import User from "../models/User.js";
 /* CREATE */
-exports.createPost = async (req, res) => {
+export const  createPost = async (req, res) => {
   try {
     const { userId, description, picturePath } = req.body;
+    console.log("this imge",picturePath);
     const user = await User.findById(userId);
     const newPost = new Post({
       userId,
@@ -24,11 +24,13 @@ exports.createPost = async (req, res) => {
     res.status(201).json(post);
   } catch (err) {
     res.status(409).json({ message: err.message });
+    
+ 
   }
 };
 
 /* READ */
-exports.getFeedPosts = async (req, res) => {
+export const getFeedPosts = async (req, res) => {
   try {
     const post = await Post.find();
     res.status(200).json(post);
@@ -37,7 +39,7 @@ exports.getFeedPosts = async (req, res) => {
   }
 };
 
-exports.getUserPosts = async (req, res) => {
+export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
     const post = await Post.find({ userId });
@@ -48,7 +50,7 @@ exports.getUserPosts = async (req, res) => {
 };
 
 /* UPDATE */
-exports.likePost = async (req, res) => {
+export const likePost = async (req, res) => {
   try {
     const { id } = req.params;
     const { userId } = req.body;
